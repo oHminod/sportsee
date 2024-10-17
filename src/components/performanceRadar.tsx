@@ -5,6 +5,7 @@ import {
   Text,
   Radar,
   ResponsiveContainer,
+  PolarRadiusAxis,
 } from "recharts";
 import { UserPerformanceFormattedData } from "../utils/types";
 
@@ -38,6 +39,8 @@ const PerformanceRadar = ({
 }) => {
   if (!userPerformance) return <p>No data available</p>;
 
+  const maxValue = Math.max(...userPerformance.map((data) => data.value)) + 30;
+
   return (
     <div className="flex h-[263px] bg-darkGrey w-[258px] rounded-md">
       <ResponsiveContainer width="100%" height="100%">
@@ -54,6 +57,11 @@ const PerformanceRadar = ({
             tickLine={false}
             stroke="#FFFFFF"
             tick={(props) => customedLabels(props)}
+          />
+          <PolarRadiusAxis
+            domain={[0, maxValue]}
+            tick={false}
+            axisLine={false}
           />
           <Radar dataKey="value" fillOpacity={0.7} fill="rgb(255, 1, 1)" />
         </RadarChart>

@@ -30,7 +30,7 @@ const ScoreRadialChart = ({ user }: { user: formatedUserMainData }) => {
             <RadialBar background dataKey="score" cornerRadius={10} />
           </RadialBarChart>
         </ResponsiveContainer>
-        <div className="h-[160px] w-[160px] bg-white rounded-full absolute top-[11px] left-[15px] flex flex-col items-center justify-center pt-9">
+        <div className="h-[170px] w-[170px] bg-white rounded-full absolute top-[10px] left-[10px] flex flex-col items-center justify-center pt-9">
           <p className="text-legendTitle font-bold">
             {Math.round(user.score * 100)}%
           </p>

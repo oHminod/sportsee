@@ -19,6 +19,9 @@ export default {
         legendTitle: ["26px", "26px"],
         legend: ["16px", "26px"],
       },
+      boxShadow: {
+        header: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+      },
     },
   },
   plugins: [],

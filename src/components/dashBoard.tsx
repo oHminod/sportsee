@@ -67,6 +67,7 @@ const DashBoard = (): JSX.Element => {
   const normalizedData = new NormalizeData(userData);
   const { user, userPerformance, userAverageSessions, userActivity, keyData } =
     normalizedData;
+  const goodScore = user.score >= 0.15;
 
   return (
     <div className="flex flex-col w-full ml-[117px]">
@@ -76,7 +77,9 @@ const DashBoard = (): JSX.Element => {
           <span className="text-primary">{user.userInfos.firstName}</span>
         </h1>
         <p className="w-[835px] xl:w-[1125px] text-lg leading-6 mt-[41px] ml-[2px]">
-          Félicitation ! Vous avez explosé vos objectifs hier 👏
+          {goodScore
+            ? "Félicitation ! Vous avez explosé vos objectifs hier 👏"
+            : "Courage ! Continuez, vos efforts vont payer 💪"}
         </p>
       </div>
       <div className="flex flex-col items-center xl:flex-row xl:justify-center xl:items-start gap-8">

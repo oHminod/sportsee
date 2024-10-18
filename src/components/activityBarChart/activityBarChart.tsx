@@ -27,15 +27,21 @@ const ActivityBarChart = ({
     <span className="text-[#74798C] text-sm font-medium">{value}</span>
   );
 
+  const domainMinWeight = minWeight - 1;
+  const domainMaxWeight = maxWeight + 1;
+  const midWeight = (domainMinWeight + domainMaxWeight) / 2;
+  const yAxisTicks = [domainMinWeight, midWeight, domainMaxWeight];
+  const midWeightIsDecimal = midWeight % 1 !== 0;
+
   return (
     <div className="h-[320px] w-[835px] bg-lightGrey rounded-md relative px-8">
       <h3 className="absolute left-8 top-6 text-[#20253A] font-medium text-[15px]">
-        Activités quotidiennes
+        Activité quotidienne
       </h3>
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
           data={sessions}
-          margin={{ top: 23, bottom: 23 }}
+          margin={{ top: 30, bottom: 30 }}
           barGap={8}
           barSize={7}
         >
@@ -50,27 +56,25 @@ const ActivityBarChart = ({
             }}
             padding={{ left: -45, right: -45 }}
           />
-
-          <YAxis dataKey="calories" yAxisId="left" hide={true} />
           <YAxis
             dataKey="kilogram"
             yAxisId="right"
             orientation="right"
-            domain={[minWeight - 1, maxWeight + 1]}
-            tickCount={4}
+            domain={[domainMinWeight, domainMaxWeight]}
+            ticks={yAxisTicks}
             tickLine={false}
             axisLine={{ stroke: "transparent" }}
             className="text-sm font-medium text-legendGrey opacity-60"
             tick={{
-              dx: 36,
+              dx: midWeightIsDecimal ? 22 : 36,
             }}
           />
+          <YAxis dataKey="calories" yAxisId="left" hide={true} />
           <Tooltip
             content={<CustomToolTip />}
             cursor={<CustomCursor />}
             isAnimationActive={false}
           />
-
           <CartesianGrid
             stroke="rgba(222, 222, 222, 1)"
             strokeDasharray="3 3"

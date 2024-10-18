@@ -13,6 +13,7 @@ import {
 } from "./types";
 
 const mockedData = false;
+const apiDomain = "http://localhost:3000";
 
 /**
  * Fetches the main data of a user by ID.
@@ -29,7 +30,7 @@ export const getUser = async (id: number = 12): Promise<UserMainData> => {
     return userData;
   }
 
-  const response = await fetch(`http://localhost:3000/user/${id}`);
+  const response = await fetch(`${apiDomain}/user/${id}`);
 
   if (!response.ok) {
     throw new Error("Could not fetch user data");
@@ -57,7 +58,7 @@ export const getUserActivity = async (
     return userActivity;
   }
 
-  const response = await fetch(`http://localhost:3000/user/${id}/activity`);
+  const response = await fetch(`${apiDomain}/user/${id}/activity`);
 
   if (!response.ok) {
     throw new Error("Could not fetch user activity data");
@@ -87,9 +88,7 @@ export const getUserAverageSessions = async (
     return userAverageSessions;
   }
 
-  const response = await fetch(
-    `http://localhost:3000/user/${id}/average-sessions`
-  );
+  const response = await fetch(`${apiDomain}/user/${id}/average-sessions`);
 
   if (!response.ok) {
     throw new Error("Could not fetch user average sessions data");
@@ -117,7 +116,7 @@ export const getUserPerformance = async (
     return userPerformance;
   }
 
-  const response = await fetch(`http://localhost:3000/user/${id}/performance`);
+  const response = await fetch(`${apiDomain}/user/${id}/performance`);
 
   if (!response.ok) {
     throw new Error("Could not fetch user performance data");

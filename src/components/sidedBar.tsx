@@ -1,7 +1,7 @@
 const SidedBar = () => {
   return (
     <div className="min-h-full w-[117px] bg-[#020203] fixed z-10">
-      <nav className="flex flex-col items-center justify-center gap-5 h-full w-full absolute -top-[96px] z-10">
+      <nav className="flex flex-col items-center justify-center gap-5 h-full w-full absolute -top-[6px] z-10">
         <a href="#">
           <div className="bg-white h-16 w-16 rounded-[6px] flex items-center justify-center">
             <img src="/Zen.png" alt="zen" />

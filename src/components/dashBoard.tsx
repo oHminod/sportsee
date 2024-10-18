@@ -70,7 +70,7 @@ const DashBoard = (): JSX.Element => {
   const goodScore = user.score >= 0.15;
 
   return (
-    <div className="flex flex-col w-full ml-[117px]">
+    <div className="flex flex-col w-full pl-[117px] pt-[91px] pb-[68px]">
       <div className="flex flex-col items-center justify-center mb-[77px] mt-[68px]">
         <h1 className="w-[835px] xl:w-[1125px] text-5xl leading-6 font-medium">
           Bonjour{" "}

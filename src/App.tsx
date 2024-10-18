@@ -6,10 +6,8 @@ function App() {
   return (
     <>
       <Header />
-      <div className="flex w-full min-h-full pt-[91px]">
-        <SidedBar />
-        <DashBoard />
-      </div>
+      <SidedBar />
+      <DashBoard />
     </>
   );
 }

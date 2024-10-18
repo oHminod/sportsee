@@ -1,9 +1,21 @@
-import { formatedUserAverageSession, UserActivity, UserAverageSessions, UserData, UserMainData, UserPerformance } from "./types";
+import { formatedUserActivity, formatedUserAverageSession, formatedUserData, formatedUserMainData, UserActivity, UserAverageSessions, UserData, userKeyData, UserMainData, UserPerformance, UserPerformanceFormattedData } from "./types";
 
-export const normalizeData = (userData: UserData) => {
+/**
+ * Normalizes user data by formatting various aspects of the user data.
+ * 
+ * @param {UserData} userData - The user data to normalize.
+ * @returns {Object} The normalized user data.
+ */
+export const normalizeData = (userData: UserData): formatedUserData => {
     const { user, userActivity, userAverageSessions, userPerformance } = userData;
 
-    const formatUserKeyData = (userMainData: UserMainData) => {
+    /**
+     * Formats the key data of the user.
+     * 
+     * @param {UserMainData} userMainData - The main data of the user.
+     * @returns {Array<Object>} The formatted key data.
+     */
+    const formatUserKeyData = (userMainData: UserMainData): userKeyData => {
         const keyData = userMainData.keyData
         return Object.entries(keyData).map(([key, value]) => {
             switch (key) {
@@ -36,7 +48,13 @@ export const normalizeData = (userData: UserData) => {
         });
     }
 
-    function formatUserMainData(userMainData: UserMainData) {
+    /**
+     * Formats the main data of the user.
+     * 
+     * @param {UserMainData} userMainData - The main data of the user.
+     * @returns {Object} The formatted main data.
+     */
+    function formatUserMainData(userMainData: UserMainData): formatedUserMainData {
         const { userInfos, todayScore, score, keyData } = userMainData;
 
 
@@ -50,7 +68,13 @@ export const normalizeData = (userData: UserData) => {
         };
     }
 
-    function formatUserActivity(userActivity: UserActivity) {
+    /**
+     * Formats the activity data of the user.
+     * 
+     * @param {UserActivity} userActivity - The activity data of the user.
+     * @returns {Object} The formatted activity data.
+     */
+    function formatUserActivity(userActivity: UserActivity): formatedUserActivity {
         const { sessions } = userActivity;
 
         const minWeight = Math.min(...sessions.map((session) => session.kilogram));
@@ -67,7 +91,13 @@ export const normalizeData = (userData: UserData) => {
         };
     }
 
-    function formatUserAverageSessions(userAverageSessions: UserAverageSessions) {
+    /**
+     * Formats the average session data of the user.
+     * 
+     * @param {UserAverageSessions} userAverageSessions - The average session data of the user.
+     * @returns {Array<formatedUserAverageSession>} The formatted average session data.
+     */
+    function formatUserAverageSessions(userAverageSessions: UserAverageSessions): formatedUserAverageSession[] {
         const { sessions } = userAverageSessions;
 
         const nameDay = (day: number) => {
@@ -97,7 +127,13 @@ export const normalizeData = (userData: UserData) => {
         })) as formatedUserAverageSession[];
     }
 
-    function formatPerformanceData(userPerformance: UserPerformance) {
+    /**
+     * Formats the performance data of the user.
+     * 
+     * @param {UserPerformance} userPerformance - The performance data of the user.
+     * @returns {Array<Object>} The formatted performance data.
+     */
+    function formatPerformanceData(userPerformance: UserPerformance): UserPerformanceFormattedData[] {
         const { data, kind } = userPerformance;
 
         const formatKindName = (kind: string) => {

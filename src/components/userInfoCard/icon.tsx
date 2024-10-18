@@ -1,4 +1,11 @@
-const Icon = ({ name }: { name: string }) => {
+/**
+ * UserInfoCard component to display user information with an icon.
+ * @param {Object} props - The properties for the UserInfoCard component.
+ * @param {string} props.label - The label for the user information.
+ * @param {string} props.value - The value for the user information.
+ * @returns {JSX.Element} The UserInfoCard component.
+ */
+const Icon = ({ name }: { name: string }): JSX.Element => {
   switch (name) {
     case "Calories":
       return (

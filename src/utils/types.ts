@@ -83,3 +83,13 @@ export type UserData = {
     userAverageSessions: UserAverageSessions;
     userPerformance: UserPerformance;
 };
+
+export type formatedUserData = {
+    user: formatedUserMainData;
+    userActivity: formatedUserActivity;
+    userAverageSessions: formatedUserAverageSession[];
+    userPerformance: UserPerformanceFormattedData[];
+    keyData: userKeyData;
+};
+
+export type userKeyData = { key: string, value: string }[]

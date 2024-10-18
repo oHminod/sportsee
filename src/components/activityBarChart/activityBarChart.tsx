@@ -13,16 +13,33 @@ import { formatedUserActivity } from "../../utils/types";
 import CustomToolTip from "./hoverToolTip";
 import CustomCursor from "./customCursor";
 
+/**
+ * ActivityBarChart component to display the daily activity of a user in a bar chart.
+ * @param {Object} props - The properties for the ActivityBarChart component.
+ * @param {formatedUserActivity} props.userActivity - The user activity data.
+ * @returns {JSX.Element} The ActivityBarChart component.
+ */
 const ActivityBarChart = ({
   userActivity,
 }: {
   userActivity: formatedUserActivity;
-}) => {
+}): JSX.Element => {
   const { sessions, minWeight, maxWeight } = userActivity;
 
+  /**
+   * Formats the X-axis labels.
+   * @param {unknown} _value - The value of the X-axis label.
+   * @param {number} index - The index of the X-axis label.
+   * @returns {string} The formatted X-axis label.
+   */
   const formatXAxis = (_value: unknown, index: number): string =>
     (index + 1).toString();
 
+  /**
+   * Formats the legend labels.
+   * @param {string} value - The value of the legend label.
+   * @returns {JSX.Element} The formatted legend label.
+   */
   const formatLegend = (value: string): JSX.Element => (
     <span className="text-[#74798C] text-sm font-medium">{value}</span>
   );

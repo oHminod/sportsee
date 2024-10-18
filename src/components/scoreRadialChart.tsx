@@ -1,7 +1,18 @@
 import { RadialBar, RadialBarChart, ResponsiveContainer } from "recharts";
 import { formatedUserMainData } from "../utils/types";
 
-const ScoreRadialChart = ({ user }: { user: formatedUserMainData }) => {
+/**
+ * Component to render a radial chart displaying the user's score.
+ *
+ * @param {Object} props - The component props.
+ * @param {formatedUserMainData} props.user - The user data containing the score.
+ * @returns {JSX.Element} The rendered radial chart component.
+ */
+const ScoreRadialChart = ({
+  user,
+}: {
+  user: formatedUserMainData;
+}): JSX.Element => {
   const data = [
     {
       score: 1,

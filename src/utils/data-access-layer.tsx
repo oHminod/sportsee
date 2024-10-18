@@ -12,9 +12,15 @@ import {
   UserData,
 } from "./types";
 
-const mockedData = true;
+const mockedData = false;
 
-export const getUser = async (id = 12): Promise<UserMainData> => {
+/**
+ * Fetches the main data of a user by ID.
+ * @param {number} [id=12] - The ID of the user.
+ * @returns {Promise<UserMainData>} The main data of the user.
+ * @throws Will throw an error if the user data cannot be fetched.
+ */
+export const getUser = async (id: number = 12): Promise<UserMainData> => {
   if (mockedData) {
     const userData = USER_MAIN_DATA.find((user) => user.id === id);
     if (!userData) {
@@ -34,7 +40,15 @@ export const getUser = async (id = 12): Promise<UserMainData> => {
   return data.data;
 };
 
-export const getUserActivity = async (id = 12): Promise<UserActivity> => {
+/**
+ * Fetches the activity data of a user by ID.
+ * @param {number} [id=12] - The ID of the user.
+ * @returns {Promise<UserActivity>} The activity data of the user.
+ * @throws Will throw an error if the user activity data cannot be fetched.
+ */
+export const getUserActivity = async (
+  id: number = 12
+): Promise<UserActivity> => {
   if (mockedData) {
     const userActivity = USER_ACTIVITY.find((user) => user.userId === id);
     if (!userActivity) {
@@ -54,8 +68,14 @@ export const getUserActivity = async (id = 12): Promise<UserActivity> => {
   return data.data;
 };
 
+/**
+ * Fetches the average sessions data of a user by ID.
+ * @param {number} [id=12] - The ID of the user.
+ * @returns {Promise<UserAverageSessions>} The average sessions data of the user.
+ * @throws Will throw an error if the user average sessions data cannot be fetched.
+ */
 export const getUserAverageSessions = async (
-  id = 12
+  id: number = 12
 ): Promise<UserAverageSessions> => {
   if (mockedData) {
     const userAverageSessions = USER_AVERAGE_SESSIONS.find(
@@ -80,7 +100,15 @@ export const getUserAverageSessions = async (
   return data.data;
 };
 
-export const getUserPerformance = async (id = 12): Promise<UserPerformance> => {
+/**
+ * Fetches the performance data of a user by ID.
+ * @param {number} [id=12] - The ID of the user.
+ * @returns {Promise<UserPerformance>} The performance data of the user.
+ * @throws Will throw an error if the user performance data cannot be fetched.
+ */
+export const getUserPerformance = async (
+  id: number = 12
+): Promise<UserPerformance> => {
   if (mockedData) {
     const userPerformance = USER_PERFORMANCE.find((user) => user.userId === id);
     if (!userPerformance) {
@@ -100,15 +128,17 @@ export const getUserPerformance = async (id = 12): Promise<UserPerformance> => {
   return data.data;
 };
 
-export const getUserData = async (id = 12): Promise<UserData> => {
+/**
+ * Fetches all relevant data of a user by ID.
+ * @param {number} [id=12] - The ID of the user.
+ * @returns {Promise<UserData>} An object containing the main data, activity data, average sessions data, and performance data of the user.
+ * @throws Will throw an error if any of the user data cannot be fetched.
+ */
+export const getUserData = async (id: number = 12): Promise<UserData> => {
   const user = await getUser(id);
   const userActivity = await getUserActivity(id);
   const userAverageSessions = await getUserAverageSessions(id);
   const userPerformance = await getUserPerformance(id);
-
-  // if (!user || !userActivity || !userAverageSessions || !userPerformance) {
-  //   throw new Error("Could not fetch user data");
-  // }
 
   return {
     user,

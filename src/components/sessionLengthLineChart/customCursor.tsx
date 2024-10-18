@@ -4,7 +4,13 @@ type CustomCursorProps = {
   points?: { x: number; y: number }[];
 };
 
-const CustomCursor = ({ points }: CustomCursorProps) => {
+/**
+ * CustomCursor component to display a custom cursor for the recharts line chart.
+ * @param {CustomCursorProps} props - The properties for the CustomCursor component.
+ * @param {Array<{x: number, y: number}>} [props.points] - The points data for the cursor.
+ * @returns {JSX.Element|null} The CustomCursor component or null if points are not provided.
+ */
+const CustomCursor = ({ points }: CustomCursorProps): JSX.Element | null => {
   if (!points) return null;
 
   return (

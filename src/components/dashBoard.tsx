@@ -9,18 +9,31 @@ import ActivityBarChart from "./activityBarChart/activityBarChart";
 import UserInfoCard from "./userInfoCard/userInfoCard";
 import NormalizeData from "../utils/normalizeData";
 
-const getUserIdFromQueryString = () => {
+/**
+ * Extracts the user ID from the query string in the URL.
+ * @returns {number | undefined} The user ID or undefined if not found.
+ */
+const getUserIdFromQueryString = (): number | undefined => {
   const params = new URLSearchParams(window.location.search);
 
   const id = Number(params.get("id")) || undefined;
   return id;
 };
 
-const DashBoard = () => {
+/**
+ * The DashBoard component fetches user data and displays various charts and information cards.
+ * @component
+ * @returns {JSX.Element} The rendered component.
+ */
+const DashBoard = (): JSX.Element => {
   const [userData, setUserData] = useState<UserData | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    /**
+     * Fetches user data based on the user ID from the query string.
+     * @async
+     */
     const fetchUserData = async () => {
       const userId = getUserIdFromQueryString();
 

@@ -3,11 +3,17 @@ import { formatedUserAverageSession } from "../../utils/types";
 import CustomCursor from "./customCursor";
 import CustomToolTip from "./hoverTooltip";
 
+/**
+ * SessionLengthLineChart component to display the average session length of a user in a line chart.
+ * @param {Object} props - The properties for the SessionLengthLineChart component.
+ * @param {formatedUserAverageSession[]} props.userAverageSessions - The user average session data.
+ * @returns {JSX.Element} The SessionLengthLineChart component.
+ */
 const SessionLengthLineChart = ({
   userAverageSessions,
 }: {
   userAverageSessions: formatedUserAverageSession[];
-}) => {
+}): JSX.Element => {
   return (
     <div className="h-[263px] w-[258px] bg-red rounded-md relative">
       <ResponsiveContainer width="100%" height="100%">

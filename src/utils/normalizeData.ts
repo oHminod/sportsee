@@ -10,6 +10,9 @@ import {
     UserPerformanceFormattedData,
 } from "./types";
 
+/**
+ * Class representing normalized user data.
+ */
 class NormalizeData {
     public user: formatedUserMainData;
     public userActivity: formatedUserActivity;
@@ -17,6 +20,10 @@ class NormalizeData {
     public userPerformance: UserPerformanceFormattedData[];
     public keyData: { key: string; value: string }[];
 
+    /**
+     * Create a NormalizeData instance.
+     * @param {UserData} userData - The raw user data.
+     */
     constructor(userData: UserData) {
         const { user, userActivity, userAverageSessions, userPerformance } = userData;
 
@@ -27,7 +34,12 @@ class NormalizeData {
         this.keyData = this.formatUserKeyData(user);
     }
 
-    private formatUserKeyData(userMainData: UserMainData) {
+    /**
+     * Format the key data of the user.
+     * @param {UserMainData} userMainData - The main data of the user.
+     * @returns {Array<{ key: string; value: string }>} The formatted key data.
+     */
+    private formatUserKeyData(userMainData: UserMainData): { key: string; value: string }[] {
         const keyData = userMainData.keyData;
         return Object.entries(keyData).map(([key, value]) => {
             switch (key) {
@@ -60,6 +72,11 @@ class NormalizeData {
         });
     }
 
+    /**
+     * Format the main data of the user.
+     * @param {UserMainData} userMainData - The main data of the user.
+     * @returns {formatedUserMainData} The formatted main data.
+     */
     private formatUserMainData(userMainData: UserMainData): formatedUserMainData {
         const { userInfos, todayScore, score, keyData } = userMainData;
 
@@ -72,6 +89,11 @@ class NormalizeData {
         };
     }
 
+    /**
+     * Format the activity data of the user.
+     * @param {UserActivity} userActivity - The activity data of the user.
+     * @returns {formatedUserActivity} The formatted activity data.
+     */
     private formatUserActivity(userActivity: UserActivity): formatedUserActivity {
         const { sessions } = userActivity;
 
@@ -89,6 +111,11 @@ class NormalizeData {
         };
     }
 
+    /**
+     * Format the average session data of the user.
+     * @param {UserAverageSessions} userAverageSessions - The average session data of the user.
+     * @returns {formatedUserAverageSession[]} The formatted average session data.
+     */
     private formatUserAverageSessions(
         userAverageSessions: UserAverageSessions
     ): formatedUserAverageSession[] {
@@ -121,6 +148,11 @@ class NormalizeData {
         }));
     }
 
+    /**
+     * Format the performance data of the user.
+     * @param {UserPerformance} userPerformance - The performance data of the user.
+     * @returns {UserPerformanceFormattedData[]} The formatted performance data.
+     */
     private formatPerformanceData(
         userPerformance: UserPerformance
     ): UserPerformanceFormattedData[] {

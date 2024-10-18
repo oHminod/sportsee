@@ -18,7 +18,18 @@ type CustomedLabelsProps = {
   [key: string]: unknown;
 };
 
-function customedLabels({ payload, x, y, cy, ...rest }: CustomedLabelsProps) {
+/**
+ * Custom label component for the radar chart.
+ * @param {CustomedLabelsProps} props - The properties for the custom label.
+ * @returns {JSX.Element} The custom label element.
+ */
+function customedLabels({
+  payload,
+  x,
+  y,
+  cy,
+  ...rest
+}: CustomedLabelsProps): JSX.Element {
   return (
     <Text
       {...rest}
@@ -32,11 +43,17 @@ function customedLabels({ payload, x, y, cy, ...rest }: CustomedLabelsProps) {
   );
 }
 
+/**
+ * PerformanceRadar component to display user performance data in a radar chart.
+ * @param {Object} props - The properties for the PerformanceRadar component.
+ * @param {UserPerformanceFormattedData[]} props.userPerformance - The user performance data.
+ * @returns {JSX.Element} The PerformanceRadar component.
+ */
 const PerformanceRadar = ({
   userPerformance,
 }: {
   userPerformance: UserPerformanceFormattedData[];
-}) => {
+}): JSX.Element => {
   if (!userPerformance) return <p>No data available</p>;
 
   const maxValue = Math.max(...userPerformance.map((data) => data.value)) + 30;

@@ -2,11 +2,12 @@ import { useEffect, useState } from "react";
 import { getUserData } from "../utils/data-access-layer";
 import PerformanceRadar from "./performanceRadar";
 import { UserData } from "../utils/types";
-import { normalizeData } from "../utils/formatData";
+// import { normalizeData } from "../utils/formatData";
 import ScoreRadialChart from "./scoreRadialChart";
 import SessionLengthLineChart from "./sessionLengthLineChart/sessionLengthLineChart";
 import ActivityBarChart from "./activityBarChart/activityBarChart";
 import UserInfoCard from "./userInfoCard/userInfoCard";
+import NormalizeData from "../utils/normalizeData";
 
 const getUserIdFromQueryString = () => {
   const params = new URLSearchParams(window.location.search);
@@ -49,7 +50,8 @@ const DashBoard = () => {
       </p>
     );
 
-  const normalizedData = normalizeData(userData);
+  // const normalizedData = normalizeData(userData);
+  const normalizedData = new NormalizeData(userData);
   const { user, userPerformance, userAverageSessions, userActivity, keyData } =
     normalizedData;
 

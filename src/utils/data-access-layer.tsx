@@ -12,7 +12,7 @@ import {
   UserData,
 } from "./types";
 
-const mockedData = false;
+const mockedData = true;
 const apiDomain = "http://localhost:3000";
 
 /**

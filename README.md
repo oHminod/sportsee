@@ -1,4 +1,4 @@
-# SportSee
+# ![SportSee](https://ohminod.github.io/sportsee/logo.png)
 
 SportSee est une application de suivi de performance sportive développée avec React, TypeScript et Vite. Ce projet utilise également Tailwind CSS pour le style et ESLint pour le linting.
 

@@ -11,6 +11,8 @@ export type KeyData = {
     lipidCount: number;
 };
 
+export type userKeyData = { key: string, value: string }[]
+
 export type UserMainData = {
     id: number;
     userInfos: UserInfos;
@@ -36,15 +38,15 @@ export type UserActivity = {
     sessions: UserActivitySession[];
 };
 
-export type UserAverageSession = {
-    day: number;
-    sessionLength: number;
-};
-
 export type formatedUserActivity = {
     sessions: UserActivitySession[];
     minWeight: number;
     maxWeight: number;
+};
+
+export type UserAverageSession = {
+    day: number;
+    sessionLength: number;
 };
 
 export type formatedUserAverageSession = {
@@ -92,4 +94,3 @@ export type formatedUserData = {
     keyData: userKeyData;
 };
 
-export type userKeyData = { key: string, value: string }[]

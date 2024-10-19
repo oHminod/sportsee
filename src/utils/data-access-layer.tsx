@@ -12,7 +12,7 @@ import {
   UserData,
 } from "./types";
 
-const mockedData = true;
+const mockedData = false;
 const apiDomain = "http://localhost:3000";
 
 /**
@@ -134,10 +134,13 @@ export const getUserPerformance = async (
  * @throws Will throw an error if any of the user data cannot be fetched.
  */
 export const getUserData = async (id: number = 12): Promise<UserData> => {
-  const user = await getUser(id);
-  const userActivity = await getUserActivity(id);
-  const userAverageSessions = await getUserAverageSessions(id);
-  const userPerformance = await getUserPerformance(id);
+  const [user, userActivity, userAverageSessions, userPerformance] =
+    await Promise.all([
+      getUser(id),
+      getUserActivity(id),
+      getUserAverageSessions(id),
+      getUserPerformance(id),
+    ]);
 
   return {
     user,

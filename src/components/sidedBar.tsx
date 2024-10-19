@@ -17,7 +17,7 @@ const SidedBar = () => {
   const isVerySmallScreen = windowHeight < 328;
 
   return (
-    <div className="min-h-full w-[117px] bg-[#020203] fixed z-10">
+    <div className="min-h-full w-[117px] bg-[#020203] fixed z-10 hidden lg:block">
       <nav
         className={`flex flex-col items-center justify-center gap-5 h-full w-full absolute -top-[6px] z-10${
           isSmallScreen ? " hidden" : ""

@@ -8,6 +8,7 @@ import {
     formatedUserMainData,
     formatedUserActivity,
     UserPerformanceFormattedData,
+    userKeyData,
 } from "./types";
 
 /**
@@ -18,7 +19,7 @@ class NormalizeData {
     public userActivity: formatedUserActivity;
     public userAverageSessions: formatedUserAverageSession[];
     public userPerformance: UserPerformanceFormattedData[];
-    public keyData: { key: string; value: string }[];
+    public keyData: userKeyData;
 
     /**
      * Create a NormalizeData instance.
@@ -39,7 +40,7 @@ class NormalizeData {
      * @param {UserMainData} userMainData - The main data of the user.
      * @returns {Array<{ key: string; value: string }>} The formatted key data.
      */
-    private formatUserKeyData(userMainData: UserMainData): { key: string; value: string }[] {
+    private formatUserKeyData(userMainData: UserMainData): userKeyData {
         const keyData = userMainData.keyData;
         return Object.entries(keyData).map(([key, value]) => {
             switch (key) {

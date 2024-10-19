@@ -8,6 +8,7 @@ import SessionLengthLineChart from "./sessionLengthLineChart/sessionLengthLineCh
 import ActivityBarChart from "./activityBarChart/activityBarChart";
 import UserInfoCard from "./userInfoCard/userInfoCard";
 import NormalizeData from "../utils/normalizeData";
+import Loading from "./loading";
 
 /**
  * Extracts the user ID from the query string in the URL.
@@ -50,12 +51,7 @@ const DashBoard = (): JSX.Element => {
     fetchUserData();
   }, []);
 
-  if (loading)
-    return (
-      <p className="w-full h-full flex items-center justify-center">
-        Loading...
-      </p>
-    );
+  if (loading) return <Loading />;
   if (!userData)
     return (
       <p className="w-full h-full flex items-center justify-center">

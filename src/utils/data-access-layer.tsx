@@ -12,7 +12,7 @@ import {
   UserData,
 } from "./types";
 
-const mockedData = false;
+const mockedData = true;
 const apiDomain = "http://localhost:3000";
 
 /**
@@ -135,7 +135,7 @@ export const getUserPerformance = async (
  */
 export const getUserData = async (id: number = 12): Promise<UserData> => {
   // Simulate a delay to mimic long data fetching
-  await new Promise((resolve) => setTimeout(resolve, 2000));
+  await new Promise((resolve) => setTimeout(resolve, 1500));
 
   const [user, userActivity, userAverageSessions, userPerformance] =
     await Promise.all([

@@ -13,7 +13,12 @@ const getUserIdFromQueryString = (): number | undefined => {
   return id;
 };
 
-const useUserData = () => {
+/**
+ * Custom hook to fetch and manage user data.
+ *
+ * @returns {{ userData: UserData | null, loading: boolean }} An object containing the user data and loading state.
+ */
+const useUserData = (): { userData: UserData | null; loading: boolean } => {
   const [userData, setUserData] = useState<UserData | null>(null);
   const [loading, setLoading] = useState(true);
 

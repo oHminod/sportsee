@@ -134,16 +134,18 @@ export const getUserPerformance = async (
  * @throws Will throw an error if any of the user data cannot be fetched.
  */
 export const getUserData = async (id: number = 12): Promise<UserData> => {
-  // Simulate a delay to mimic long data fetching
+  const data = Promise.all([
+    getUser(id),
+    getUserActivity(id),
+    getUserAverageSessions(id),
+    getUserPerformance(id),
+  ]);
+
+  // Simulate a delay to mimic long data fetching, delay fit loader animation
   await new Promise((resolve) => setTimeout(resolve, 1500));
 
   const [user, userActivity, userAverageSessions, userPerformance] =
-    await Promise.all([
-      getUser(id),
-      getUserActivity(id),
-      getUserAverageSessions(id),
-      getUserPerformance(id),
-    ]);
+    await data
 
   return {
     user,

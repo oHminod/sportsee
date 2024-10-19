@@ -1,25 +1,11 @@
-import { useEffect, useState } from "react";
-import { getUserData } from "../utils/data-access-layer";
 import PerformanceRadar from "./performanceRadar";
-import { UserData } from "../utils/types";
-// import { normalizeData } from "../utils/formatData";
 import ScoreRadialChart from "./scoreRadialChart";
 import SessionLengthLineChart from "./sessionLengthLineChart/sessionLengthLineChart";
 import ActivityBarChart from "./activityBarChart/activityBarChart";
 import UserInfoCard from "./userInfoCard/userInfoCard";
 import NormalizeData from "../utils/normalizeData";
 import Loading from "./loading";
-
-/**
- * Extracts the user ID from the query string in the URL.
- * @returns {number | undefined} The user ID or undefined if not found.
- */
-const getUserIdFromQueryString = (): number | undefined => {
-  const params = new URLSearchParams(window.location.search);
-
-  const id = Number(params.get("id")) || undefined;
-  return id;
-};
+import useUserData from "../hooks/useUserData";
 
 /**
  * The DashBoard component fetches user data and displays various charts and information cards.
@@ -27,29 +13,7 @@ const getUserIdFromQueryString = (): number | undefined => {
  * @returns {JSX.Element} The rendered component.
  */
 const DashBoard = (): JSX.Element => {
-  const [userData, setUserData] = useState<UserData | null>(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    /**
-     * Fetches user data based on the user ID from the query string.
-     * @async
-     */
-    const fetchUserData = async () => {
-      const userId = getUserIdFromQueryString();
-
-      try {
-        const data = await getUserData(userId);
-        setUserData(data);
-      } catch (error) {
-        console.error(error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchUserData();
-  }, []);
+  const { userData, loading } = useUserData();
 
   if (loading) return <Loading />;
   if (!userData)
@@ -59,7 +23,7 @@ const DashBoard = (): JSX.Element => {
       </p>
     );
 
-  // const normalizedData = normalizeData(userData);
+  // const normalizedData = normalizeData(userData); // old way
   const normalizedData = new NormalizeData(userData);
   const { user, userPerformance, userAverageSessions, userActivity, keyData } =
     normalizedData;

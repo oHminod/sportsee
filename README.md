@@ -17,6 +17,25 @@ npm install
 - `npm run lint` : Exécute ESLint pour vérifier le code.
 - `npm run preview` : Prévisualise l'application construite.
 
+## Utilisation
+
+Pour charger un utilisateur spécifique, passer son id dans la query string de l'URL :
+
+```
+http://localhost:5173/?id=12
+```
+
+Les utilisateurs 1 à 12 et 18 sont disponibles dans les données mockées, 12 et 18 via l'API. Sans query string, l'utilisateur 12 est sélectionné.
+
+Pour passer des données mockées à l'API, changer la valeur de la variable `mockedData` dans le fichier `src/utils/data-access-layer.ts` à `false`.
+
+On peut modifier l'adresse de l'API à l'aide de la variable `apiDomain` dans le même fichier.
+
+```ts
+const mockedData = true;
+const apiDomain = "http://localhost:3000";
+```
+
 ## Structure du projet
 
 ```

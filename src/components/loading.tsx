@@ -2,7 +2,7 @@ const Loading = () => {
   return (
     <div className="flex justify-center items-center h-full">
       <svg
-        className="animate-spinner h-28 w-28 text-primary"
+        className="animate-spinner h-36 w-36 text-primary"
         viewBox="0 0 50 50"
       >
         <circle
@@ -12,7 +12,7 @@ const Loading = () => {
           r="20"
           fill="none"
           stroke="currentColor"
-          strokeWidth="5"
+          strokeWidth="3"
           strokeLinecap="round"
         ></circle>
       </svg>

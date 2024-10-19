@@ -36,6 +36,8 @@ const mockedData = true;
 const apiDomain = "http://localhost:3000";
 ```
 
+Une version live avec les données mockées est disponible ici : [SportSee](https://ohminod.github.io/sportsee/)
+
 ## Structure du projet
 
 ```

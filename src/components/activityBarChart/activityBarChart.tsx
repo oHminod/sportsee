@@ -51,77 +51,79 @@ const ActivityBarChart = ({
   const midWeightIsDecimal = midWeight % 1 !== 0;
 
   return (
-    <div className="h-[320px] w-[835px] bg-lightGrey rounded-md relative px-8">
-      <h3 className="absolute left-8 top-6 text-[#20253A] font-medium text-[15px]">
-        Activité quotidienne
-      </h3>
-      <ResponsiveContainer width="100%" height="100%">
-        <BarChart
-          data={sessions}
-          margin={{ top: 30, bottom: 30 }}
-          barGap={8}
-          barSize={7}
-        >
-          <XAxis
-            dataKey="day"
-            axisLine={{ stroke: "rgba(222, 222, 222, 1)" }}
-            tickFormatter={formatXAxis}
-            tickLine={false}
-            className="text-sm font-medium text-legendGrey opacity-60"
-            tick={{
-              dy: 16,
-            }}
-            padding={{ left: -45, right: -45 }}
-          />
-          <YAxis
-            dataKey="kilogram"
-            yAxisId="right"
-            orientation="right"
-            domain={[domainMinWeight, domainMaxWeight]}
-            ticks={yAxisTicks}
-            tickLine={false}
-            axisLine={{ stroke: "transparent" }}
-            className="text-sm font-medium text-legendGrey opacity-60"
-            tick={{
-              dx: midWeightIsDecimal ? 22 : 36,
-            }}
-          />
-          <YAxis dataKey="calories" yAxisId="left" hide={true} />
-          <Tooltip
-            content={<CustomToolTip />}
-            cursor={<CustomCursor />}
-            isAnimationActive={false}
-          />
-          <CartesianGrid
-            stroke="rgba(222, 222, 222, 1)"
-            strokeDasharray="3 3"
-            vertical={false}
-          />
-          <Legend
-            align="right"
-            verticalAlign="top"
-            iconSize={8}
-            height={80}
-            formatter={formatLegend}
-          />
-          <Bar
-            dataKey="kilogram"
-            fill="rgba(40, 45, 48, 1)"
-            name=" Poids (kg)"
-            legendType="circle"
-            yAxisId="right"
-            radius={[3, 3, 0, 0]}
-          />
-          <Bar
-            dataKey="calories"
-            fill="rgba(230, 0, 0, 1)"
-            name=" Calories brûlées (kCal)"
-            legendType="circle"
-            yAxisId="left"
-            radius={[3, 3, 0, 0]}
-          />
-        </BarChart>
-      </ResponsiveContainer>
+    <div className="w-full overflow-x-auto">
+      <div className="h-[320px] w-[835px] bg-lightGrey rounded-md relative pl-[43px] pr-[29px] mx-auto">
+        <h3 className="absolute left-8 top-6 text-[#20253A] font-medium text-[15px]">
+          Activité quotidienne
+        </h3>
+        <ResponsiveContainer width="100%" height="100%" className="w-[835px]">
+          <BarChart
+            data={sessions}
+            margin={{ top: 30, bottom: 30 }}
+            barGap={8}
+            barSize={7}
+          >
+            <XAxis
+              dataKey="day"
+              axisLine={{ stroke: "rgba(222, 222, 222, 1)" }}
+              tickFormatter={formatXAxis}
+              tickLine={false}
+              className="text-sm font-medium text-legendGrey opacity-60"
+              tick={{
+                dy: 16,
+              }}
+              padding={{ left: -45, right: -45 }}
+            />
+            <YAxis
+              dataKey="kilogram"
+              yAxisId="right"
+              orientation="right"
+              domain={[domainMinWeight, domainMaxWeight]}
+              ticks={yAxisTicks}
+              tickLine={false}
+              axisLine={{ stroke: "transparent" }}
+              className="text-sm font-medium text-legendGrey opacity-60"
+              tick={{
+                dx: midWeightIsDecimal ? 22 : 36,
+              }}
+            />
+            <YAxis dataKey="calories" yAxisId="left" hide={true} />
+            <Tooltip
+              content={<CustomToolTip />}
+              cursor={<CustomCursor />}
+              isAnimationActive={false}
+            />
+            <CartesianGrid
+              stroke="rgba(222, 222, 222, 1)"
+              strokeDasharray="3 3"
+              vertical={false}
+            />
+            <Legend
+              align="right"
+              verticalAlign="top"
+              iconSize={8}
+              height={80}
+              formatter={formatLegend}
+            />
+            <Bar
+              dataKey="kilogram"
+              fill="rgba(40, 45, 48, 1)"
+              name=" Poids (kg)"
+              legendType="circle"
+              yAxisId="right"
+              radius={[3, 3, 0, 0]}
+            />
+            <Bar
+              dataKey="calories"
+              fill="rgba(230, 0, 0, 1)"
+              name=" Calories brûlées (kCal)"
+              legendType="circle"
+              yAxisId="left"
+              radius={[3, 3, 0, 0]}
+            />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
     </div>
   );
 };

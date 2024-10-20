@@ -65,7 +65,6 @@ src/
     utils/
         data-access-layer.tsx
         data-mock.ts
-        formatData.ts
         normalizeData.ts
         types.ts
     vite-env.d.ts

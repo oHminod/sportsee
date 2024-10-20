@@ -34,3 +34,8 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+.recharts-legend-item {
+  margin-right: 0 !important;
+  padding-left: 32px;
+}

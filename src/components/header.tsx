@@ -28,8 +28,8 @@ const Header = () => {
           </li>
         </ul>
       </nav>
-      <div className="lg:hidden flex flex-1 items-center justify-end pr-6 w-full">
-        <div className="h-16 w-16 flex items-center">
+      <div className="lg:hidden flex flex-1 items-center justify-end pr-9 w-full">
+        <div className="h-10 w-10 flex items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 100 100"

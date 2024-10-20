@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import Header from "./components/header.tsx";
-import SidedBar from "./components/sidedBar.tsx";
+import Header from "./components/layout/header.tsx";
+import SidedBar from "./components/layout/sidedBar.tsx";
 import DashBoard from "./components/dashBoard.tsx";
 import "./index.css";
 

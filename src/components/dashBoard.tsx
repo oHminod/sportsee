@@ -4,7 +4,7 @@ import SessionLengthLineChart from "./sessionLengthLineChart/sessionLengthLineCh
 import ActivityBarChart from "./activityBarChart/activityBarChart";
 import UserInfoCard from "./userInfoCard/userInfoCard";
 import NormalizeData from "../utils/normalizeData";
-import Loading from "./loading";
+import Loading from "./layout/loading";
 import useUserData from "../hooks/useUserData";
 
 /**

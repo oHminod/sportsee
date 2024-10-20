@@ -23,7 +23,6 @@ const DashBoard = (): JSX.Element => {
       </p>
     );
 
-  // const normalizedData = normalizeData(userData); // old way
   const normalizedData = new NormalizeData(userData);
   const { user, userPerformance, userAverageSessions, userActivity, keyData } =
     normalizedData;

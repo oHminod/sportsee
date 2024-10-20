@@ -28,39 +28,17 @@ const Header = () => {
           </li>
         </ul>
       </nav>
-      <div className="lg:hidden flex flex-1 items-center justify-end pr-4 w-full">
+      <div className="lg:hidden flex flex-1 items-center justify-end pr-6 w-full">
         <div className="h-16 w-16 flex items-center">
           <svg
-            version="1.0"
-            id="katman_1"
             xmlns="http://www.w3.org/2000/svg"
-            xmlnsXlink="http://www.w3.org/1999/xlink"
-            x="0px"
-            y="0px"
-            viewBox="0 0 841.89 595.28"
-            xmlSpace="preserve"
+            viewBox="0 0 100 100"
+            width="64"
+            height="64"
           >
-            <rect
-              x="164.21"
-              y="132.42"
-              fill="#FFFFFF"
-              width="514.08"
-              height="66.64"
-            />
-            <rect
-              x="164.21"
-              y="395.81"
-              fill="#FFFFFF"
-              width="514.08"
-              height="66.64"
-            />
-            <rect
-              x="164.21"
-              y="264.12"
-              fill="#FFFFFF"
-              width="514.08"
-              height="66.64"
-            />
+            <rect x="10" y="20" width="80" height="10" fill="#FFFFFF" />
+            <rect x="10" y="45" width="80" height="10" fill="#FFFFFF" />
+            <rect x="10" y="70" width="80" height="10" fill="#FFFFFF" />
           </svg>
         </div>
       </div>

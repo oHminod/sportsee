@@ -28,8 +28,8 @@ const Header = () => {
           </li>
         </ul>
       </nav>
-      <div className="flex flex-1 items-center justify-end pr-4 w-full">
-        <div className="lg:hidden h-16 w-16 flex items-center">
+      <div className="lg:hidden flex flex-1 items-center justify-end pr-4 w-full">
+        <div className="h-16 w-16 flex items-center">
           <svg
             version="1.0"
             id="katman_1"

@@ -43,18 +43,23 @@ Une version live avec les données mockées est disponible ici : [SportSee](http
 ```
 public/
 src/
-    App.tsx
-    assets/
+    main.tsx
     components/
         activityBarChart/
             activityBarChart.tsx
             ...
         dashBoard.tsx
+        header.tsx
+        loading.tsx
         performanceRadar.tsx
         scoreRadialChart.tsx
         sessionLengthLineChart/
+            sessionLengthLineChart.tsx
             ...
+        sidebar.tsx
         userInfoCard/
+            userInfoCard.tsx
+            ...
     index.css
     main.tsx
     utils/
@@ -67,6 +72,7 @@ src/
 .gitignore
 eslint.config.js
 index.html
+package-lock.json
 package.json
 postcss.config.js
 README.md

@@ -39,3 +39,7 @@ body {
   margin-right: 0 !important;
   padding-left: 32px;
 }
+
+.recharts-legend-wrapper {
+  margin-top: -7px;
+}

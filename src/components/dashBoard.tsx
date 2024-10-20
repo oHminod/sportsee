@@ -1,5 +1,5 @@
-import PerformanceRadar from "./performanceRadar";
-import ScoreRadialChart from "./scoreRadialChart";
+import PerformanceRadar from "./performanceRadar/performanceRadar";
+import ScoreRadialChart from "./scoreRadialChart/scoreRadialChart";
 import SessionLengthLineChart from "./sessionLengthLineChart/sessionLengthLineChart";
 import ActivityBarChart from "./activityBarChart/activityBarChart";
 import UserInfoCard from "./userInfoCard/userInfoCard";

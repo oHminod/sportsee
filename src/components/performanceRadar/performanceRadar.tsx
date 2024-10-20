@@ -2,46 +2,12 @@ import {
   RadarChart,
   PolarAngleAxis,
   PolarGrid,
-  Text,
   Radar,
   ResponsiveContainer,
   PolarRadiusAxis,
 } from "recharts";
-import { UserPerformanceFormattedData } from "../utils/types";
-
-type CustomedLabelsProps = {
-  payload: { value: string };
-  x: number;
-  y: number;
-  cx: number;
-  cy: number;
-  [key: string]: unknown;
-};
-
-/**
- * Custom label component for the radar chart.
- * @param {CustomedLabelsProps} props - The properties for the custom label.
- * @returns {JSX.Element} The custom label element.
- */
-function customedLabels({
-  payload,
-  x,
-  y,
-  cy,
-  ...rest
-}: CustomedLabelsProps): JSX.Element {
-  return (
-    <Text
-      {...rest}
-      verticalAnchor="middle"
-      y={y + (y - cy) / 10}
-      x={x}
-      className="text-[12px]"
-    >
-      {payload.value}
-    </Text>
-  );
-}
+import { UserPerformanceFormattedData } from "../../utils/types";
+import CustomedLabels from "./customLabels";
 
 /**
  * PerformanceRadar component to display user performance data in a radar chart.
@@ -73,7 +39,7 @@ const PerformanceRadar = ({
             dataKey="kind"
             tickLine={false}
             stroke="#FFFFFF"
-            tick={(props) => customedLabels(props)}
+            tick={(props) => CustomedLabels(props)}
           />
           <PolarRadiusAxis
             domain={[0, maxValue]}

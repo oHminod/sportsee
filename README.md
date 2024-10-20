@@ -49,14 +49,18 @@ src/
             activityBarChart.tsx
             ...
         dashBoard.tsx
-        header.tsx
-        loading.tsx
-        performanceRadar.tsx
-        scoreRadialChart.tsx
+        layout/
+            header.tsx
+            loading.tsx
+            sidebar.tsx
+        performanceRadar/
+            performanceRadar.tsx
+            ...
+        scoreRadialChart/
+            scoreRadialChart.tsx
         sessionLengthLineChart/
             sessionLengthLineChart.tsx
             ...
-        sidebar.tsx
         userInfoCard/
             userInfoCard.tsx
             ...

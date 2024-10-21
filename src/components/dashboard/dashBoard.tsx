@@ -3,9 +3,9 @@ import ScoreRadialChart from "./scoreRadialChart/scoreRadialChart";
 import SessionLengthLineChart from "./sessionLengthLineChart/sessionLengthLineChart";
 import ActivityBarChart from "./activityBarChart/activityBarChart";
 import UserInfoCard from "./userInfoCard/userInfoCard";
-import NormalizeData from "../utils/normalizeData";
-import Loading from "./layout/loading";
-import useUserData from "../hooks/useUserData";
+import NormalizeData from "../../utils/normalizeData";
+import Loading from "../layout/loading";
+import useUserData from "../../hooks/useUserData";
 
 /**
  * The DashBoard component fetches user data and displays various charts and information cards.

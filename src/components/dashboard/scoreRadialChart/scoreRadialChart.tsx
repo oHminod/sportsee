@@ -1,5 +1,5 @@
 import { RadialBar, RadialBarChart, ResponsiveContainer } from "recharts";
-import { formatedUserMainData } from "../../utils/types";
+import { formatedUserMainData } from "../../../utils/types";
 
 /**
  * Component to render a radial chart displaying the user's score.

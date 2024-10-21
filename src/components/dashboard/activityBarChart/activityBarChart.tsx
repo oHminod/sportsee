@@ -9,7 +9,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-import { formatedUserActivity } from "../../utils/types";
+import { formatedUserActivity } from "../../../utils/types";
 import CustomToolTip from "./hoverToolTip";
 import CustomCursor from "./customCursor";
 

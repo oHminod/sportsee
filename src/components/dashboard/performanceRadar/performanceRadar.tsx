@@ -6,7 +6,7 @@ import {
   ResponsiveContainer,
   PolarRadiusAxis,
 } from "recharts";
-import { UserPerformanceFormattedData } from "../../utils/types";
+import { UserPerformanceFormattedData } from "../../../utils/types";
 import CustomedLabels from "./customLabels";
 
 /**

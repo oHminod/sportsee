@@ -42,35 +42,38 @@ Une version live avec les données mockées est disponible ici : [SportSee](http
 
 ```
 public/
+    logo.png
+    ...
 src/
     main.tsx
     components/
-        activityBarChart/
-            activityBarChart.tsx
-            ...
-        dashBoard.tsx
+        dashboard/
+            activityBarChart/
+                activityBarChart.tsx
+                ...
+            performanceRadar/
+                performanceRadar.tsx
+                ...
+            scoreRadialChart/
+                scoreRadialChart.tsx
+            sessionLengthLineChart/
+                sessionLengthLineChart.tsx
+                ...
+            userInfoCard/
+                userInfoCard.tsx
+                ...
+            dashBoard.tsx
         layout/
             header.tsx
             loading.tsx
             sidebar.tsx
-        performanceRadar/
-            performanceRadar.tsx
-            ...
-        scoreRadialChart/
-            scoreRadialChart.tsx
-        sessionLengthLineChart/
-            sessionLengthLineChart.tsx
-            ...
-        userInfoCard/
-            userInfoCard.tsx
-            ...
-    index.css
-    main.tsx
     utils/
         data-access-layer.tsx
         data-mock.ts
         normalizeData.ts
         types.ts
+    index.css
+    main.tsx
     vite-env.d.ts
 .gitignore
 eslint.config.js

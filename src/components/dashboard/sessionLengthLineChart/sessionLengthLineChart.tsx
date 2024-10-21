@@ -1,5 +1,5 @@
 import { Line, LineChart, ResponsiveContainer, Tooltip, YAxis } from "recharts";
-import { formatedUserAverageSession } from "../../utils/types";
+import { formatedUserAverageSession } from "../../../utils/types";
 import CustomCursor from "./customCursor";
 import CustomToolTip from "./hoverTooltip";
 

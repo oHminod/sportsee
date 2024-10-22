@@ -65,6 +65,7 @@ src/
             dashBoard.tsx
         layout/
             header.tsx
+            layout.tsx
             loading.tsx
             sidebar.tsx
     utils/

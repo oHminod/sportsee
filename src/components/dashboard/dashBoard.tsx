@@ -29,13 +29,13 @@ const DashBoard = (): JSX.Element => {
   const goodScore = user.score >= 0.15;
 
   return (
-    <div className="flex flex-col w-full lg:pl-[117px] xl:pl-[132px] pt-[91px] pb-[68px]">
-      <div className="flex flex-col items-center justify-center mb-[77px] mt-[68px]">
-        <h1 className="lg:w-[835px] xl:w-[1125px] text-5xl leading-6 font-medium">
+    <>
+      <div className="flex flex-col items-center justify-center lg:w-[835px] xl:w-[1125px] mb-[77px] mt-[68px] mx-auto px-4 lg:px-0">
+        <h1 className="text-5xl leading-6 font-medium w-full">
           Bonjour{" "}
           <span className="text-primary">{user.userInfos.firstName}</span>
         </h1>
-        <p className="lg:w-[835px] xl:w-[1125px] text-lg leading-6 mt-[41px] ml-[2px]">
+        <p className="text-lg leading-6 mt-[41px] ml-[2px] w-full">
           {goodScore
             ? "Félicitation ! Vous avez explosé vos objectifs hier 👏"
             : "Courage ! Continuez, vos efforts vont payer 💪"}
@@ -50,13 +50,13 @@ const DashBoard = (): JSX.Element => {
             <ScoreRadialChart user={user} />
           </div>
         </div>
-        <div className="flex flex-wrap xl:flex-col gap-[39px] justify-center lg:justify-between lg:w-[835px] xl:w-[258px]">
+        <div className="flex flex-wrap xl:flex-col gap-[39px] justify-center lg:justify-between lg:w-[835px] xl:w-[258px] pb-[68px]">
           {keyData.map((data, i) => (
             <UserInfoCard key={i} label={data.key} value={data.value} />
           ))}
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

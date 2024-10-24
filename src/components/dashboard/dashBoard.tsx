@@ -31,7 +31,7 @@ const DashBoard = (): JSX.Element => {
   return (
     <>
       <div className="flex flex-col items-center justify-center lg:w-[835px] xl:w-[1125px] mb-[77px] mt-[68px] mx-auto px-4 lg:px-0">
-        <h1 className="text-5xl leading-6 font-medium w-full">
+        <h1 className="text-5xl sm:leading-6 font-medium w-full">
           Bonjour{" "}
           <span className="text-primary">{user.userInfos.firstName}</span>
         </h1>

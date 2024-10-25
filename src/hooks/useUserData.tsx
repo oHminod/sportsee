@@ -41,6 +41,11 @@ const useUserData = (): { userData: UserData | null; loading: boolean } => {
     };
 
     fetchUserData();
+
+    return () => {
+      setUserData(null);
+      setLoading(true);
+    };
   }, []);
 
   return { userData, loading };

@@ -10,6 +10,8 @@ Pour installer les dépendances du projet, exécutez :
 npm install
 ```
 
+Le code de l'API utilisée pour ce projet est disponible [ici](https://github.com/OpenClassrooms-Student-Center/SportSee).
+
 ## Scripts
 
 - `npm run dev` : Lance le serveur de développement Vite.

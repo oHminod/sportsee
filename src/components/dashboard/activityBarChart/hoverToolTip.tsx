@@ -20,7 +20,7 @@ const CustomToolTip = ({
     const tooltipStyle: React.CSSProperties = {
       position: "absolute",
       left: coordinate?.x ? coordinate?.x + 36 : 0,
-      top: "75px",
+      top: "82px",
       pointerEvents: "none",
     };
     return (

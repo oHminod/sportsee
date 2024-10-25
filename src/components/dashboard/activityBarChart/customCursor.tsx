@@ -17,8 +17,8 @@ const CustomCursor = (props: RectangleProps): JSX.Element => {
       fill="rgba(196, 196, 196, 0.5)"
       width={newWidth}
       x={newX}
-      height="51.7%"
-      y="32%"
+      height="47.1%"
+      y="34.2%"
     />
   );
 };

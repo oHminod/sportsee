@@ -70,6 +70,8 @@ src/
             layout.tsx
             loading.tsx
             sidebar.tsx
+    hooks/
+        useUserData.tsx
     utils/
         data-access-layer.tsx
         data-mock.ts
